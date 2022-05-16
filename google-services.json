@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "477803985311",
+    "project_id": "framework-desafio",
+    "storage_bucket": "framework-desafio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477803985311:android:04838dc9959519b87625aa",
+        "android_client_info": {
+          "package_name": "com.framework.desafio.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477803985311-emoo06i9njgktt6qojofdsjqnhlijun7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnaH_yfWT0WVjnx9OPaDAnlLBoTCA138c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477803985311-emoo06i9njgktt6qojofdsjqnhlijun7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

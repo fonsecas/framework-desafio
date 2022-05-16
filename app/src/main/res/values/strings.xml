@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FrameWork</string>
+    <string name="title">E-commerce</string>
+    <string name="error">Ocorreu um erro. Tente novamente.</string>
+    <!--Global Strings-->
+    <string name="global_try_again">Tentar novamente</string>
+    <string name="global_ok">OK</string>
+    <string name="global_send">Enviar</string>
+    <string name="global_error">Erro</string>
+    <string name="global_cancel">Cancelar</string>
+    <!--Error Strings-->
+    <string name="error_title">Oops!</string>
+    <string name="error_unauthorized">Não pudemos completar a operação. Você não está autorizado</string>
+    <string name="error_too_many_requests">Limite de requisições atingido. Tente novamente mais tarde</string>
+    <string name="error_timeout">Conexão expirou. Tente novamente mais tarde</string>
+    <string name="error_network">Não foi possível completar a operação. Verifique sua conexão e tente novamente</string>
+    <string name="error_unexpected">Não foi possível completar a operação. Tente novamente mais tarde.</string>
+</resources>
