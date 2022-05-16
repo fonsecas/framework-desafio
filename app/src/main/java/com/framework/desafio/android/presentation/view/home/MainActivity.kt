@@ -1,19 +1,25 @@
-package com.framework.desafio.android.presentation.view
+package com.framework.desafio.android.presentation.view.home
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.framework.desafio.android.R
 import com.framework.desafio.android.databinding.ActivityMainBinding
 import com.framework.desafio.android.domain.entity.fruit.Fruit
+import com.framework.desafio.android.presentation.util.base.BaseActivity
+import com.framework.desafio.android.presentation.util.base.BaseViewModel
+import com.framework.desafio.android.presentation.view.cart.CartActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+
     private var mAuthListener: AuthStateListener? = null
+    override val baseViewModel: BaseViewModel get() = _viewModel
     private val _viewModel: MainViewModel by viewModel()
 
     private lateinit var binding: ActivityMainBinding
@@ -47,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("AUTH", "Login Efetuado com sucesso!!!")
                 }
             }
-
+        setupUi()
     }
 
     override fun onStart() {
@@ -62,7 +68,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun subscribeUi() {
+
+    private fun setupUi() {
+        binding.cartButton.setOnClickListener { onCartButtonClicked() }
+    }
+    private fun onCartButtonClicked() {
+        val intent = Intent(this, CartActivity::class.java)
+        startActivity(intent)
+    }
+
+    override fun subscribeUi() {
         _viewModel.users.observe(this, ::onUserReceived)
         _viewModel.placeholder.observe(this) { binding.placeholderView.setPlaceholder(it) }
     }
@@ -76,18 +91,8 @@ class MainActivity : AppCompatActivity() {
         adapter.submitList(userList)
     }
 
-//    private fun getFruitList() {
-//        val myDB = FirebaseFirestore.getInstance()
-//        myDB.collection("frutas")
-//            .get()
-//            .addOnSuccessListener { result ->
-//                for (document in result) {
-//                    document.data
-//                    Log.d(TAG, "${document.id} => ${document.data}")
-//                }
-//            }
-//            .addOnFailureListener { exception ->
-//                Log.w(TAG, "Error getting documents.", exception)
-//            }
-//    }
+    companion object {
+        fun createIntent(context: Context) =
+            Intent(context, MainActivity::class.java)
+    }
 }

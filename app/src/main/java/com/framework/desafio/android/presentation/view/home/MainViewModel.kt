@@ -1,10 +1,11 @@
-package com.framework.desafio.android.presentation.view
+package com.framework.desafio.android.presentation.view.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.framework.desafio.android.domain.entity.fruit.Fruit
 import com.framework.desafio.android.domain.interector.IGetFruitList
 import com.framework.desafio.android.presentation.util.base.BaseViewModel
+import com.framework.desafio.android.presentation.view.cart.CartNavData
 
 class MainViewModel constructor(
     private val interector: IGetFruitList,
@@ -22,6 +23,10 @@ class MainViewModel constructor(
         launchDataLoad {
             _users.value = getListFruit()
         }
+    }
+
+    fun goToCartActivity() {
+        goTo(CartNavData())
     }
 
     fun getListFruit() = listOf(

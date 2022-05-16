@@ -1,4 +1,4 @@
-package com.framework.desafio.android.presentation.view
+package com.framework.desafio.android.presentation.view.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FrameWork</string>
     <string name="title">E-commerce</string>
+    <string name="cart_tittle">Carrinho</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
     <!--Global Strings-->
     <string name="global_try_again">Tentar novamente</string>

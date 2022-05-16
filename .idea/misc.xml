@@ -8,6 +8,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/game/Downloads/desafio-main (1)/desafio-main/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.1015" />
+        <entry key="..\:/Users/game/Downloads/desafio-main (1)/desafio-main/app/src/main/res/layout/activity_cart.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/game/Downloads/desafio-main (1)/desafio-main/app/src/main/res/layout/activity_main.xml" value="0.10052083333333334" />
         <entry key="..\:/Users/game/Downloads/desafio-main (1)/desafio-main/app/src/main/res/layout/list_item_user.xml" value="0.2222222222222222" />
       </map>
