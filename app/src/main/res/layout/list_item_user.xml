@@ -21,7 +21,7 @@
             tools:src="@drawable/ic_round_account_circle" />
 
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -31,13 +31,13 @@
             app:layout_constraintTop_toTopOf="@+id/picture"
             tools:text="\@username" />
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/priceLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorDetail"
             app:layout_constraintBottom_toBottomOf="@+id/picture"
-            app:layout_constraintStart_toStartOf="@+id/username"
-            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:layout_constraintStart_toStartOf="@+id/price"
+            app:layout_constraintTop_toBottomOf="@+id/price"
             android:text="Preço: R$ " />
         <TextView
             android:id="@+id/name"
@@ -46,8 +46,15 @@
             android:textColor="@color/colorDetail"
             android:layout_marginStart="@dimen/spacing_4"
             app:layout_constraintBottom_toBottomOf="@+id/picture"
-            app:layout_constraintStart_toEndOf="@+id/price"
-            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:layout_constraintStart_toEndOf="@+id/priceLabel"
+            app:layout_constraintTop_toBottomOf="@+id/price"
             tools:text="Name Surname" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_add_shopping_cart_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

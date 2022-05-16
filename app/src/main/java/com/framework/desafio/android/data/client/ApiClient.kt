@@ -7,7 +7,7 @@ class ApiClient constructor(
     private val apiService: ApiService
 ) : RequestHandler() {
 
-    suspend fun getFruitList(): List<ApiFruit>?{
+    suspend fun getFruitList(): List<ApiFruit>? {
         return makeRequest(apiService.getFruitList())
     }
 }

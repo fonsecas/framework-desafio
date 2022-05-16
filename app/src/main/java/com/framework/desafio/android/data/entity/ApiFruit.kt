@@ -14,6 +14,6 @@ data class ApiFruit(
         id = id,
         img = img,
         name = name,
-        username = username
+        price = username
     )
 }

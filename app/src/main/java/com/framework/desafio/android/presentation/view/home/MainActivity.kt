@@ -1,6 +1,5 @@
 package com.framework.desafio.android.presentation.view.home
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +13,6 @@ import com.framework.desafio.android.presentation.view.cart.CartActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import org.koin.android.viewmodel.ext.android.viewModel
-
 
 class MainActivity : BaseActivity() {
 
@@ -78,7 +76,7 @@ class MainActivity : BaseActivity() {
     }
 
     override fun subscribeUi() {
-        _viewModel.users.observe(this, ::onUserReceived)
+        _viewModel.users.observe(this, ::onFruitListReceived)
         _viewModel.placeholder.observe(this) { binding.placeholderView.setPlaceholder(it) }
     }
 
@@ -87,12 +85,7 @@ class MainActivity : BaseActivity() {
         binding.recyclerView.adapter = adapter
     }
 
-    private fun onUserReceived(userList: List<Fruit?>?) {
+    private fun onFruitListReceived(userList: List<Fruit?>?) {
         adapter.submitList(userList)
-    }
-
-    companion object {
-        fun createIntent(context: Context) =
-            Intent(context, MainActivity::class.java)
     }
 }

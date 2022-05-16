@@ -14,7 +14,7 @@ class FruitListIViewHolder(
 
     fun bind(user: Fruit) {
         binding.name.text = user.name
-        binding.username.text = user.username
+        binding.price.text = user.price
         Glide
             .with(binding.root.context)
             .load(user.img.toUri())

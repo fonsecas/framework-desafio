@@ -6,5 +6,5 @@ data class Fruit(
     val id: Int,
     val img: String,
     val name: String,
-    val username: String,
+    val price: String,
 ) : Serializable
