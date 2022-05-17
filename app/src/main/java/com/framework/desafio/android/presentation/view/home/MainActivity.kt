@@ -70,8 +70,10 @@ class MainActivity : BaseActivity() {
     private fun setupUi() {
         binding.cartButton.setOnClickListener { onCartButtonClicked() }
     }
+
     private fun onCartButtonClicked() {
         val intent = Intent(this, CartActivity::class.java)
+        intent.putExtra("FRUIT_LIST", _viewModel.cartList.toTypedArray() )
         startActivity(intent)
     }
 
@@ -81,7 +83,9 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setupAdapter() {
-        adapter = FruitListAdapter()
+        adapter = FruitListAdapter(
+            _viewModel::onAddCartClicked
+        )
         binding.recyclerView.adapter = adapter
     }
 

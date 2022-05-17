@@ -50,6 +50,7 @@
             app:layout_constraintTop_toBottomOf="@+id/price"
             tools:text="Name Surname" />
         <ImageView
+            android:id="@+id/addCartButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_add_shopping_cart_24"

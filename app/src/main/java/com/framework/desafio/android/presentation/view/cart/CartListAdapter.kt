@@ -1,22 +1,19 @@
-package com.framework.desafio.android.presentation.view.home
+package com.framework.desafio.android.presentation.view.cart
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.framework.desafio.android.domain.entity.fruit.Fruit
 
-class FruitListAdapter(
-    private val onAddToCartClickedCallback: (Fruit) -> Unit,
-) : ListAdapter<Fruit, FruitListIViewHolder>(DiffUtilCallback) {
+class CartListAdapter : ListAdapter<Fruit, CartListIViewHolder>(DiffUtilCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FruitListIViewHolder {
-        return FruitListIViewHolder.inflate(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartListIViewHolder {
+        return CartListIViewHolder.inflate(parent)
     }
 
-    override fun onBindViewHolder(holder: FruitListIViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CartListIViewHolder, position: Int) {
         holder.bind(
-            currentList[position],
-            onAddToCartClickedCallback,
+            currentList[position]
         )
     }
 

@@ -14,6 +14,9 @@ class MainViewModel constructor(
 
     private val _users by lazy { MutableLiveData<List<Fruit?>?>() }
 
+   var cartList: MutableList<Fruit> = mutableListOf()
+
+
     init {
         getFruitList()
     }
@@ -22,5 +25,11 @@ class MainViewModel constructor(
         launchDataLoad {
             _users.value = getFruitList.execute()
         }
+    }
+
+    fun onAddCartClicked(fruit: Fruit){
+        cartList.size
+        cartList.add(fruit)
+        cartList
     }
 }

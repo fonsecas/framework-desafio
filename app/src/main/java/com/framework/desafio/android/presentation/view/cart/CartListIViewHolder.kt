@@ -1,4 +1,4 @@
-package com.framework.desafio.android.presentation.view.home
+package com.framework.desafio.android.presentation.view.cart
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,13 +8,13 @@ import com.bumptech.glide.Glide
 import com.framework.desafio.android.databinding.ListItemUserBinding
 import com.framework.desafio.android.domain.entity.fruit.Fruit
 
-class FruitListIViewHolder(
+class CartListIViewHolder(
     private val binding: ListItemUserBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
-        fruit: Fruit,
-        callback: (Fruit) -> Unit,) {
+        fruit: Fruit
+    ) {
         binding.name.text = fruit.name
         binding.price.text = fruit.price
         Glide
@@ -22,11 +22,10 @@ class FruitListIViewHolder(
             .load(fruit.img.toUri())
             .circleCrop()
             .into(binding.picture)
-        binding.addCartButton.setOnClickListener { callback(fruit) }
     }
 
     companion object {
-        fun inflate(parent: ViewGroup) = FruitListIViewHolder(
+        fun inflate(parent: ViewGroup) = CartListIViewHolder(
             ListItemUserBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
